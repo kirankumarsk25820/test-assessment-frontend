@@ -1,0 +1,69 @@
+/* Google Fonts (optional but recommended) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global resets / theme */
+:root {
+  --brand-primary: #1E3A8A; /* deep blue */
+  --brand-accent:  #F59E0B; /* golden */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-800;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Headings use Poppins */
+h1,h2,h3,h4,h5,h6,.font-heading {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Reusable UI primitives */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition shadow-sm;
+  }
+  .btn-primary {
+    @apply btn text-white;
+    background-color: var(--brand-primary);
+  }
+  .btn-primary:hover { filter: brightness(0.95); }
+
+  .btn-accent {
+    @apply btn text-white;
+    background-color: var(--brand-accent);
+  }
+  .btn-accent:hover { filter: brightness(0.95); }
+
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow p-6;
+  }
+
+  .link {
+    @apply text-blue-600 hover:underline;
+  }
+
+  .badge {
+    @apply inline-block px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700;
+  }
+
+  .muted {
+    @apply text-gray-500;
+  }
+
+  .nav {
+    @apply bg-[color:var(--brand-primary)] text-white;
+  }
+}
